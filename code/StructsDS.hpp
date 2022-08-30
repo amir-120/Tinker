@@ -284,7 +284,7 @@ struct DS2Packet{
     }
 } GCCPACKED;
 
-static_assert(sizeof(DS2Packet) == DS2PacketSize, "DS4 Packet defined struct does not match the buffer size.");
+static_assert(sizeof(DS2Packet) == DS2PacketSize, "DS2 Packet defined struct does not match the buffer size.");
 
 struct DS4PacketUSB{
     // Report ID
