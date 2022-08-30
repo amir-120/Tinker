@@ -14,7 +14,7 @@ int main (void) {
   wiringPiISR(CLK, INT_EDGE_FALLING, OnClock);
 
   while(true){
-    //delay(998);
+    delay(998);
     printf("Cycles: %llu\n", g_cycles);
     g_cycles = 0;
   }
