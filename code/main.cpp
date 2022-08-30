@@ -9,9 +9,9 @@ unsigned long long int g_cycles { 0 };
 
 int main (void) {
   wiringPiSetup();
-  pullUpDnControl(CLK, PUD_UP)
+  pullUpDnControl(CLK, PUD_UP);
 
-  wiringPiISR(CLK, INT_EDGE_FALLING, );
+  wiringPiISR(CLK, INT_EDGE_FALLING, OnClock);
 
 
   while(true){
