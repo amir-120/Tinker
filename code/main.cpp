@@ -1,21 +1,28 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
-// LED Pin - wiringPi pin 0 is ASSU_PI_GPIO 164.
+#define	CLK	0
 
-#define	LED	0
+void OnClock();
+
+unsigned long long int g_cycles { 0 };
 
 int main (void) {
-  printf("Raspberry Pi blink\n");
-
   wiringPiSetup();
-  pinMode(LED, OUTPUT);
+  pullUpDnControl(CLK, PUD_UP)
 
-  while(true) {
-    digitalWrite(LED, HIGH);	// On
-    delay(500);		// mS
-    digitalWrite(LED, LOW);	// Off
-    delay(500);
+  wiringPiISR(CLK, INT_EDGE_FALLING, );
+
+
+  while(true){
+    delay(998);
+    printf("%d", g_cycles);
+    g_cycles = 0;
   }
+
   return 0;
+}
+
+void OnClock(){
+  g_cycles++;
 }
