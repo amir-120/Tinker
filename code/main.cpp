@@ -11,11 +11,11 @@ int main (void) {
   wiringPiSetup();
   pullUpDnControl(CLK, PUD_UP);
 
-  //wiringPiISR(CLK, INT_EDGE_FALLING, OnClock);
+  wiringPiISR(CLK, INT_EDGE_FALLING, OnClock);
 
   while(true){
-    delay(998);
-    printf("%llu", g_cycles);
+    //delay(998);
+    printf("Cycles: %llu\n", g_cycles);
     g_cycles = 0;
   }
 
