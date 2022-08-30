@@ -16,7 +16,7 @@ int main (void) {
 
   while(true){
     delay(998);
-    printf("%d", g_cycles);
+    printf("%llu", g_cycles);
     g_cycles = 0;
   }
 
